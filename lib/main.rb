@@ -14,7 +14,8 @@ board = Board.new
 players = [x_player, o_player].shuffle
 turn_index = 0
 while board.empty_spaces? && !board.winner?
-  puts "It is #{players[turn_index].character} turn."
+  current_player = players[turn_index]
+  puts "It is #{current_player.character} turn."
 
   print "What row do you want to play? "
   row_index = gets.chomp.to_i
@@ -22,7 +23,7 @@ while board.empty_spaces? && !board.winner?
   print "What column do you want to play? "
   col_index = gets.chomp.to_i
 
-  board.add_turn(players[turn_index].character, row_index, col_index)
+  board.add_turn(current_player, row_index, col_index)
 
   puts board.print
 

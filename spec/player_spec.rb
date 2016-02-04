@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-require_relative '../lib/player'
 describe Player do
   it 'has a x character' do
     player = Player.new('x')
